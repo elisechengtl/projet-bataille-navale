@@ -5,9 +5,9 @@ class Bateau:
         self.longueur = longueur
         self.vertical = vertical
 
+    @property
     def positions(self):
-            """Retourne une liste des positions (ligne, colonne) occupées par le bateau."""
-            if self.vertical:
-                return [(self.ligne + i, self.colonne) for i in range(self.longueur)]
-            else:
-                return [(self.ligne, self.colonne + i) for i in range(self.longueur)]
+        if self.vertical:
+            return [(self.ligne + i, self.colonne) for i in range(self.longueur)]
+        else:
+            return [(self.ligne, self.colonne + i) for i in range(self.longueur)]
