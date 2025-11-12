@@ -1,5 +1,14 @@
 from grille import Grille
 
 def test_init():
-    grille = Grille()
-    assert isinstance(grille, Grille)
+    g = Grille(5, 8)
+    assert g.nombre_lignes == 5
+    assert g.nombre_colonnes == 8
+    assert len(g.matrice) == 5 * 8
+    assert all(c == g.vide for c in g.matrice)
+
+def test_tirer():
+    g = Grille(5, 8)
+    g.tirer(2, 3)
+    index = 2 * g.nombre_colonnes + 3
+    assert g.matrice[index] == g.touche
